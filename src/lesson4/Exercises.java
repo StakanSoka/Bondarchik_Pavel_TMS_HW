@@ -45,9 +45,9 @@ class Exercises {
 
         int[] copiedArray = Arrays.copyOf(array, array.length);
         array = new int[array.length - repeats];
-        for (int copiedArrayI = 0, arrayI = 0; copiedArrayI < copiedArray.length; size++) {
-            if (!isUsersNumber[size]) {
-                array[arrayI] = copiedArray[size];
+        for (int copiedArrayI = 0, arrayI = 0; copiedArrayI < copiedArray.length; copiedArrayI++) {
+            if (!isUsersNumber[copiedArrayI]) {
+                array[arrayI] = copiedArray[copiedArrayI];
                 arrayI++;
             }
         }
