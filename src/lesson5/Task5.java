@@ -11,7 +11,7 @@ class Task5 {
 
     final int FROM = 0;
     final int TO = 10;
-    final int ORDER = 2;
+    final int ORDER = 5;
 
     void fillMatrix(int[][]matrix) {
         Random random = new Random();
@@ -28,10 +28,13 @@ class Task5 {
         }
     }
 
-    void printMatrixDiagonal(int[][] matrix) {
-        System.out.print("Diagonal elements: ");
+    void printMatrixDiagonals(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
-            System.out.print(matrix[i][i] + " ");
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (i == j || (i + j == ORDER - 1)) System.out.print(matrix[i][j] + " ");
+                else System.out.print("  ");
+            }
+            System.out.println();
         }
         System.out.println();
     }
@@ -42,6 +45,6 @@ class Task5 {
         fillMatrix(matrix);
         printMatrix(matrix);
 
-        printMatrixDiagonal(matrix);
+        printMatrixDiagonals(matrix);
     }
 }

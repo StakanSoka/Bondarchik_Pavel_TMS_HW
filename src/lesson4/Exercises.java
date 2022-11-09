@@ -24,7 +24,6 @@ class Exercises {
 
     void startEx1() {
         int[] array = new int[size];
-        boolean[] isUsersNumber = new boolean[array.length];
         int repeats = 0;
 
         MyArray.fillArray(array, rangeFirst, rangeLast);
@@ -38,17 +37,16 @@ class Exercises {
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] == usersNumber) {
-                isUsersNumber[i] = true;
                 repeats++;
             }
         }
 
         int[] copiedArray = Arrays.copyOf(array, array.length);
         array = new int[array.length - repeats];
-        for (int copiedArrayI = 0, arrayI = 0; copiedArrayI < copiedArray.length; copiedArrayI++) {
-            if (!isUsersNumber[copiedArrayI]) {
-                array[arrayI] = copiedArray[copiedArrayI];
-                arrayI++;
+        for (int i = 0, j = 0; i < copiedArray.length; i++) {
+            if (usersNumber != copiedArray[i]) {
+                array[j] = copiedArray[i];
+                j++;
             }
         }
 
@@ -61,11 +59,8 @@ class Exercises {
         System.out.println("Enter the size of the array");
         while (true) {
             size = MyArray.enteringUsersIntegerNumber();
-            if (size <= 0) {
-                System.out.println("arrays size must be an integer positive number!");
-                continue;
-            }
-            break;
+            if (size > 0) break;
+            System.out.println("arrays size must be an integer positive number!");
         }
 
         array = new int[size];
@@ -110,7 +105,6 @@ class Exercises {
         int[] array1;
         int[] array2;
         int evenSize = 0;
-        boolean[] isEven;
         final int MIN_SIZE = 5;
         final int MAX_SIZE = 10;
 
@@ -119,21 +113,15 @@ class Exercises {
             usersNumber = MyArray.enteringUsersIntegerNumber();
             if (!(usersNumber > MIN_SIZE && usersNumber <= MAX_SIZE)) {
                 System.out.println("\"" + usersNumber + "\" is not valid");
-                continue;
-            }
-            break;
+            } else break;
         }
 
         array1 = new int[usersNumber];
-        isEven = new boolean[array1.length];
         MyArray.fillArray(array1, rangeFirst, rangeLast);
         System.out.println("array1 = " + Arrays.toString(array1));
 
         for (int i = 0; i < array1.length; i++) {
-            if (array1[i] % 2 == 0) {
-                evenSize++;
-                isEven[i] = true;
-            }
+            if (array1[i] % 2 == 0) evenSize++;
         }
 
         if (evenSize == 0) {
@@ -142,10 +130,10 @@ class Exercises {
         }
 
         array2 = new int[evenSize];
-        for(int i = 0, evenArrayI = 0; i < array1.length; i++) {
-            if (isEven[i]) {
-                array2[evenArrayI] = array1[i];
-                evenArrayI++;
+        for(int i = 0, j = 0; i < array1.length && j < array2.length; i++) {
+            if (array1[i] % 2 == 0) {
+                array2[j] = array1[i];
+                j++;
             }
         }
 
