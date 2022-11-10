@@ -1,5 +1,6 @@
-import java.io.IOException;
+package lesson3;
 import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -12,7 +13,7 @@ public class Main {
                 usersEnteredNumber = in.nextInt();
                 in.close();
                 break;
-            } catch (Exception exception) { // InputMismatchException quite often, but overflow is also can be
+            } catch (Exception exception) {
                 System.out.println("The entered line \"" + in.nextLine() + "\" doesn't support. " +
                                    "You have to enter an integer value like 123, 44 etc...");
             }
