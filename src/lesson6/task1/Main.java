@@ -28,7 +28,7 @@ public class Main {
 
         creditCard1.addMoney(500);
         creditCard2.addMoney(1000);
-        creditCard3.withdrawMoney(50);
+        creditCard3.withdrawMoney(10000);
 
         System.out.println("Information after manipulations");
         System.out.println("First card");
