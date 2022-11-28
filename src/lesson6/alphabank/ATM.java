@@ -20,7 +20,7 @@ class ATM {
                     2)Withdraw money from the ATM
                     3)Check ATM's balance
                     4)Exit""");
-            usersNumber = myScanner.readIntegerNumber(ADD, EXIT); // look at the previous sout
+            usersNumber = myScanner.readIntegerNumber(ADD, EXIT); // look at the previous print
             switch (usersNumber) {
 
                 case ADD -> {
