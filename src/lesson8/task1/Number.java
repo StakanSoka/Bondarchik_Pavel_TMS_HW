@@ -1,15 +1,13 @@
 package lesson8.task1;
 
+import lesson8.task1.utils.Constant;
+
 import java.util.Objects;
 
 class Number {
 
-    public static final int MAX_NUMBER_LENGTH_BY = 7;
-    public static final int A1_OPERATOR_CODE = 29;
-    public static final int BELARUSIAN_COUNTRY_CODE = 375;
-
-    private int countryCode = BELARUSIAN_COUNTRY_CODE;
-    private int operatorCode = A1_OPERATOR_CODE;
+    private int countryCode = Constant.BELARUSIAN_COUNTRY_CODE;
+    private int operatorCode = Constant.A1_OPERATOR_CODE;
     private int number;
 
     Number(int number) {
