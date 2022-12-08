@@ -19,20 +19,25 @@ package lesson10.task1;
 
 public class Main {
 
+    public static void testExceptions() {
+        String document = "5554-ABC-5678-DEF-1a2b";
+
+        try {
+            Document.consistABC(document);
+            System.out.println("The document consists abc sequence");
+
+            Document.startsWith555(document);
+            System.out.println("The document starts with 555");
+
+            Document.endsWith1a2b(document);
+            System.out.println("The document ends with 1a2b");
+
+        } catch (ConsistingABCException | StartsWith555Exception | EndsWith1a2bException exception) {
+            System.out.println(exception.getMessage());
+        }
+    }
+
     public static void main(String[] args) {
-        String document = "1234-ABC-5678-DEF-9G0H";
-        String document2 = "5554-ABC-5678-DEF-9G0H";
-        System.out.println(document);
-
-        Document.printFirstTwoNumberBlocks(document);
-
-        Document.printEncryption(document);
-
-        Document.printFormattedNameInUpperCase(document);
-        Document.printFormattedNameInLowerCase(document);
-
-        System.out.println("Does document consist \"ABC\" : " + Document.consistABC(document));
-        System.out.println("Does document start with 555 : " + Document.startsWith555(document));
-        System.out.println("Does document start with 555 : " + Document.startsWith555(document2));
+        testExceptions();
     }
 }

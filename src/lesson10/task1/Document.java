@@ -2,9 +2,6 @@ package lesson10.task1;
 
 class Document {
 
-    private final int[] NUMBER_INDEXES = new int[] { 0, 1, 2, 3, 9, 10, 11, 12, 18, 20 };
-    private final int[] CHARACTER_INDEXES = new int[] { 5, 6, 7, 14, 15, 16, 19, 21 };
-
     public static void printFirstTwoNumberBlocks(String name) {
         int firstIndexBlock = 0;
         int secondIndexBlock = 2;
@@ -48,17 +45,23 @@ class Document {
         System.out.println(getFormattedName(name).toLowerCase());
     }
 
-    public static boolean consistABC(String name) {
-        return name.contains("abc") || name.contains("ABC");
+    public static boolean consistABC(String name) throws  ConsistingABCException {
+        if (!(name.contains("abc") || name.contains("ABC")))
+            throw new ConsistingABCException("The document doesn't consist \"ABC\" sequence");
+
+        return true;
     }
 
-    public static boolean startsWith555(String name) {
-        return name.startsWith("555");
+    public static boolean startsWith555(String name) throws StartsWith555Exception {
+         if (!name.startsWith("555"))
+             throw new StartsWith555Exception("The document doesn't start with \"555\"");
+
+         return true;
     }
 
-    public static boolean endsWith1a2b(String name) {
-        return name.endsWith("1a2b");
+    public static boolean endsWith1a2b(String name) throws EndsWith1a2bException {
+        if (!name.endsWith("1a2b"))
+            throw new EndsWith1a2bException("The document doesn't end with \"1a2b\"");
+        return true;
     }
-
-
 }
