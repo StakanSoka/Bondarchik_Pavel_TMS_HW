@@ -1,0 +1,9 @@
+docnum012345687 The document does not start with "document" or "contract"
+
+docnum666666666666 Wrong document length
+There are whitespaces characters
+The document does not start with "document" or "contract"
+
+contract7 Wrong document length
+There are whitespaces characters
+
