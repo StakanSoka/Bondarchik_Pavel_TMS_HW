@@ -1,0 +1,5 @@
+0123456789  Invalid length of the document...The document doesn't start with "docnum" or "kontract"
+contract1245678  The document doesn't start with "docnum" or "kontract"
+docnum666666666666  Invalid length of the document...
+contract7  Invalid length of the document...The document doesn't start with "docnum" or "kontract"
+docnum012345687  

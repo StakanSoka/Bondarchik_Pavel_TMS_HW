@@ -1,0 +1,4 @@
+docnum012345687
+contract1245678
+docnum666666666666
+contract7
