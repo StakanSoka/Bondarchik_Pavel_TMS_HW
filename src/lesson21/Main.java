@@ -54,7 +54,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         File file;
         List<Person> people;
-        int ageCount30, maleCount, femaleCount;
+        int ageCount30;
+        int maleCount;
+        int femaleCount;
 
         System.out.println("Enter the path of the file");
         file = new File(scanner.nextLine());
