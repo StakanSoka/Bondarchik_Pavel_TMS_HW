@@ -8,12 +8,9 @@ public class Main {
     public static String BASED_PATH = "src\\main\\java\\lesson22\\documents.txt";
 
     public static void main(String[] args) {
-        Map<Integer, Document> documents;
-        Set<String> fileLines;
         String path = BASED_PATH;
-
-        fileLines = Actions.readLinesFromFile(path);
-        documents = Actions.parseLines(fileLines);
+        Set<String> fileLines = Actions.readLinesFromFile(path);
+        Map<Integer, Document> documents = Actions.parseLines(fileLines);
 
         for (Map.Entry<Integer, Document> element : documents.entrySet()) { // Dates store "date" in milliseconds
             System.out.println("Number : " + element.getKey() + " " + element.getValue());
