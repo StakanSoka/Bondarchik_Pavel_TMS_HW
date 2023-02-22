@@ -1,11 +1,6 @@
 package lesson22;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 public class Document {
 
@@ -17,9 +12,8 @@ public class Document {
         this.name = name;
     }
 
-    public void setCreationDate(String creationDate, String format) throws ParseException {
-        DateFormat formatter = new SimpleDateFormat(format);
-        this.creationDate = formatter.parse(creationDate);
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
     public void setAuthor(String author) {

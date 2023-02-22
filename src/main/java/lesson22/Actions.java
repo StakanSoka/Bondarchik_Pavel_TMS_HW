@@ -1,5 +1,7 @@
 package lesson22;
 
+import lesson22.utils.DataParser;
+
 import java.io.*;
 import java.text.ParseException;
 import java.util.HashMap;
@@ -24,7 +26,7 @@ public class Actions {
         return lines;
     }
 
-    public static Map<Integer, Document> parseLines(Set<String> lines, String format) {
+    public static Map<Integer, Document> parseLines(Set<String> lines) {
         Map<Integer, Document> documents = new HashMap<>();
         Document document;
         String[] parts;
@@ -34,7 +36,7 @@ public class Actions {
                 parts = line.split(",");
                 document = new Document();
                 document.setName(parts[1].trim());
-                document.setCreationDate(parts[2].trim(), format);
+                document.setCreationDate(DataParser.parse(parts[2].trim(), DataParser.BASED_FORMAT));
                 document.setAuthor(parts[3].trim());
 
                 documents.put(Integer.parseInt(parts[0]), document);
