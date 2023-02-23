@@ -20,6 +20,14 @@ public class Document {
         this.author = author;
     }
 
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
     public String getName() {
         return name;
     }
